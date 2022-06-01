@@ -1,5 +1,5 @@
-import requests as _requests
 import bs4 as _bs4
+import requests as _requests
 
 
 def _generate_url(month: str, day: int) -> str:

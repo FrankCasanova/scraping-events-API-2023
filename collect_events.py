@@ -1,7 +1,9 @@
-from typing import Iterator, Dict
 import datetime as _dt
-import scraper as _scraper
 import json as _json
+from typing import Dict
+from typing import Iterator
+
+import scraper as _scraper
 
 
 def _date_range(start_date: _dt.date, end_date: _dt.date) -> Iterator[_dt.date]:
@@ -16,7 +18,7 @@ def _date_range(start_date: _dt.date, end_date: _dt.date) -> Iterator[_dt.date]:
         current_date += _dt.timedelta(days=1)
 
 
-def create_events_dict() -> Dict:
+def create_events_dict() -> Dict[str, Dict[str, list[str]]]:
     """
     A function that creates a dictionary of events.
     """
@@ -36,5 +38,5 @@ def create_events_dict() -> Dict:
 
 if __name__ == "__main__":
     events = create_events_dict()
-    with open('events.json', 'w', encoding='utf-8') as f:
+    with open("events.json", "w", encoding="utf-8") as f:
         _json.dump(events, f, ensure_ascii=False, indent=4)
