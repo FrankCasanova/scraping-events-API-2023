@@ -3,7 +3,7 @@ import json as _json
 from typing import Dict
 from typing import Iterator
 
-import scraper as _scraper
+import scraper.scraper as _scraper
 
 
 def _date_range(start_date: _dt.date, end_date: _dt.date) -> Iterator[_dt.date]:
