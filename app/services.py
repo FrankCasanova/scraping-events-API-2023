@@ -1,9 +1,10 @@
 import datetime as _dt
 import json as _json
 from typing import Dict
+from typing import List
 
 
-def get_all_events() -> Dict[str, Dict[str, list[str]]]:
+def get_all_events() -> Dict[str, Dict[str, List[str]]]:
 
     with open("scraper/events.json", "r", encoding="utf-8") as f:
         events = _json.load(f)
@@ -11,7 +12,7 @@ def get_all_events() -> Dict[str, Dict[str, list[str]]]:
     return events
 
 
-def get_month_events(month: str) -> Dict[str, Dict[str, list[str]]]:
+def get_month_events(month: str) -> Dict[str, Dict[str, List[str]]]:
     try:
         events = get_all_events()
         return events[month]
