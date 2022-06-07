@@ -1,6 +1,9 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.endpoints import router
+
+ORIGINS = ["http://localhost", "http://localhost:8080", "herokuapp.com"]
 
 
 def include_router(app: FastAPI) -> FastAPI:
@@ -15,3 +18,11 @@ def start_app() -> FastAPI:
 
 
 app = start_app()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=ORIGINS,
+    allow_credentials=True,
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
