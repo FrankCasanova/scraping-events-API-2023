@@ -8,8 +8,6 @@ fastapi = {extras = ["all"], version = "*"}
 requests = "*"
 bs4 = "*"
 pre-commit = "*"
+gunicorn = "*"
 
 [dev-packages]
-
-[requires]
-python_version = "3.9"
