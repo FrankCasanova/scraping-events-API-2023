@@ -8,7 +8,7 @@ async def all_events():
     """
     # [Show all events]
     This path operation shows all events in the app
-    
+
     ### Returns a json with the all events in the app.
     """
     return get_all_events()
@@ -18,10 +18,10 @@ async def today_events():
     """
     # [Show all events for today]
     This path operation shows all events for today
-   
+
     ### Returns a json with the all events for today.
     """
-   
+
     return get_today()
 
 

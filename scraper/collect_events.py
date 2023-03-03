@@ -3,7 +3,7 @@ import json as _json
 from typing import Dict
 from typing import Iterator
 
-import scraper.scraper as _scraper
+import scraper as _scraper
 
 
 def _date_range(start_date: _dt.date, end_date: _dt.date) -> Iterator[_dt.date]:
@@ -23,8 +23,8 @@ def create_events_dict() -> Dict[str, Dict[str, list[str]]]:
     A function that creates a dictionary of events.
     """
     events = dict()
-    start_date = _dt.date(2021, 1, 1)
-    end_date = _dt.date(2021, 12, 31)
+    start_date = _dt.date(2022, 1, 1)
+    end_date = _dt.date(2022, 12, 31)
 
     for date in _date_range(start_date, end_date):
         month = date.strftime("%B").lower()

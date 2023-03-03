@@ -5,8 +5,7 @@ from typing import List
 
 
 def get_all_events() -> Dict[str, Dict[str, List[str]]]:
-
-    with open("scraper/events.json", "r", encoding="utf-8") as f:
+    with open("scraper/events.json", encoding="utf-8") as f:
         events = _json.load(f)
 
     return events
@@ -21,7 +20,6 @@ def get_month_events(month: str) -> Dict[str, Dict[str, List[str]]]:
 
 
 def get_day_events(month: str, day: int) -> list:
-
     try:
         events = get_month_events(month)
         return events[str(day)]
